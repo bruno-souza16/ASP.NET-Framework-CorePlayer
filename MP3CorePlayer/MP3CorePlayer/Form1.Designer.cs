@@ -38,18 +38,18 @@
             this.btn_ramd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_ttime = new System.Windows.Forms.Label();
+            this.label_ptime = new System.Windows.Forms.Label();
+            this.label_album = new System.Windows.Forms.Label();
             this.label_artist = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label_title = new System.Windows.Forms.Label();
-            this.label_album = new System.Windows.Forms.Label();
-            this.label_ptime = new System.Windows.Forms.Label();
-            this.label_ttime = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_Play = new System.Windows.Forms.Button();
+            this.btn_stop = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
+            this.btn_previous = new System.Windows.Forms.Button();
+            this.btn_pause = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -176,6 +176,46 @@
             this.panel2.Size = new System.Drawing.Size(344, 141);
             this.panel2.TabIndex = 7;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(267, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(13, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "/";
+            // 
+            // label_ttime
+            // 
+            this.label_ttime.AutoSize = true;
+            this.label_ttime.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ttime.Location = new System.Drawing.Point(286, 92);
+            this.label_ttime.Name = "label_ttime";
+            this.label_ttime.Size = new System.Drawing.Size(39, 17);
+            this.label_ttime.TabIndex = 4;
+            this.label_ttime.Text = "00:00";
+            // 
+            // label_ptime
+            // 
+            this.label_ptime.AutoSize = true;
+            this.label_ptime.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ptime.Location = new System.Drawing.Point(221, 92);
+            this.label_ptime.Name = "label_ptime";
+            this.label_ptime.Size = new System.Drawing.Size(39, 17);
+            this.label_ptime.TabIndex = 3;
+            this.label_ptime.Text = "00:00";
+            // 
+            // label_album
+            // 
+            this.label_album.AutoSize = true;
+            this.label_album.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_album.Location = new System.Drawing.Point(27, 115);
+            this.label_album.Name = "label_album";
+            this.label_album.Size = new System.Drawing.Size(165, 15);
+            this.label_album.TabIndex = 2;
+            this.label_album.Text = "Name of Album, Play or Disc";
+            // 
             // label_artist
             // 
             this.label_artist.AutoSize = true;
@@ -204,119 +244,84 @@
             this.label_title.TabIndex = 2;
             this.label_title.Text = "Music Title 2020";
             // 
-            // label_album
+            // btn_Play
             // 
-            this.label_album.AutoSize = true;
-            this.label_album.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_album.Location = new System.Drawing.Point(27, 115);
-            this.label_album.Name = "label_album";
-            this.label_album.Size = new System.Drawing.Size(165, 15);
-            this.label_album.TabIndex = 2;
-            this.label_album.Text = "Name of Album, Play or Disc";
+            this.btn_Play.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Play.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Play.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Play.ForeColor = System.Drawing.Color.SkyBlue;
+            this.btn_Play.Location = new System.Drawing.Point(179, 150);
+            this.btn_Play.Name = "btn_Play";
+            this.btn_Play.Size = new System.Drawing.Size(42, 34);
+            this.btn_Play.TabIndex = 8;
+            this.btn_Play.Text = "➤";
+            this.btn_Play.UseVisualStyleBackColor = false;
+            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
             // 
-            // label_ptime
+            // btn_stop
             // 
-            this.label_ptime.AutoSize = true;
-            this.label_ptime.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ptime.Location = new System.Drawing.Point(221, 92);
-            this.label_ptime.Name = "label_ptime";
-            this.label_ptime.Size = new System.Drawing.Size(39, 17);
-            this.label_ptime.TabIndex = 3;
-            this.label_ptime.Text = "00:00";
+            this.btn_stop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_stop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_stop.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stop.ForeColor = System.Drawing.Color.SkyBlue;
+            this.btn_stop.Location = new System.Drawing.Point(131, 150);
+            this.btn_stop.Name = "btn_stop";
+            this.btn_stop.Size = new System.Drawing.Size(42, 34);
+            this.btn_stop.TabIndex = 9;
+            this.btn_stop.Text = "■";
+            this.btn_stop.UseVisualStyleBackColor = false;
+            this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
             // 
-            // label_ttime
+            // btn_next
             // 
-            this.label_ttime.AutoSize = true;
-            this.label_ttime.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ttime.Location = new System.Drawing.Point(286, 92);
-            this.label_ttime.Name = "label_ttime";
-            this.label_ttime.Size = new System.Drawing.Size(39, 17);
-            this.label_ttime.TabIndex = 4;
-            this.label_ttime.Text = "00:00";
+            this.btn_next.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_next.Font = new System.Drawing.Font("Bernard MT Condensed", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_next.ForeColor = System.Drawing.Color.SkyBlue;
+            this.btn_next.Location = new System.Drawing.Point(227, 150);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(42, 34);
+            this.btn_next.TabIndex = 10;
+            this.btn_next.Text = "►►";
+            this.btn_next.UseVisualStyleBackColor = false;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
-            // label1
+            // btn_previous
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(267, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "/";
+            this.btn_previous.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_previous.Font = new System.Drawing.Font("Bernard MT Condensed", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_previous.ForeColor = System.Drawing.Color.SkyBlue;
+            this.btn_previous.Location = new System.Drawing.Point(83, 150);
+            this.btn_previous.Name = "btn_previous";
+            this.btn_previous.Size = new System.Drawing.Size(42, 34);
+            this.btn_previous.TabIndex = 11;
+            this.btn_previous.Text = "◄◄";
+            this.btn_previous.UseVisualStyleBackColor = false;
+            this.btn_previous.Click += new System.EventHandler(this.btn_previous_Click);
             // 
-            // button1
+            // btn_pause
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button1.Location = new System.Drawing.Point(179, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(42, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "➤";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button2.Location = new System.Drawing.Point(131, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 34);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "■";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bernard MT Condensed", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button3.Location = new System.Drawing.Point(227, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(42, 34);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "►►";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Bernard MT Condensed", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button4.Location = new System.Drawing.Point(83, 150);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(42, 34);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "◄◄";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Bauhaus 93", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.SkyBlue;
-            this.button5.Location = new System.Drawing.Point(292, 151);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(42, 34);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "||";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btn_pause.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_pause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pause.Font = new System.Drawing.Font("Bauhaus 93", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pause.ForeColor = System.Drawing.Color.SkyBlue;
+            this.btn_pause.Location = new System.Drawing.Point(292, 151);
+            this.btn_pause.Name = "btn_pause";
+            this.btn_pause.Size = new System.Drawing.Size(42, 34);
+            this.btn_pause.TabIndex = 12;
+            this.btn_pause.Text = "||";
+            this.btn_pause.UseVisualStyleBackColor = false;
+            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.panel4.Controls.Add(this.button5);
-            this.panel4.Controls.Add(this.button4);
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.btn_pause);
+            this.panel4.Controls.Add(this.btn_previous);
+            this.panel4.Controls.Add(this.btn_next);
+            this.panel4.Controls.Add(this.btn_stop);
+            this.panel4.Controls.Add(this.btn_Play);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Location = new System.Drawing.Point(2, 1);
             this.panel4.Name = "panel4";
@@ -359,11 +364,11 @@
         private System.Windows.Forms.Label label_artist;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_Play;
+        private System.Windows.Forms.Button btn_stop;
+        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Button btn_previous;
+        private System.Windows.Forms.Button btn_pause;
         private System.Windows.Forms.Panel panel4;
     }
 }
