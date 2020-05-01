@@ -1,0 +1,13 @@
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\MP3CorePlayer.exe.config
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\MP3CorePlayer.exe
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\MP3CorePlayer.pdb
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\CSCore.dll
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\CSCore.xml
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.csprojAssemblyReference.cache
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.Form1.resources
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.Properties.Resources.resources
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.csproj.GenerateResource.cache
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.csproj.CopyComplete
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.exe
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.pdb
