@@ -11,3 +11,7 @@ C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP
 C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.csproj.CopyComplete
 C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.exe
 C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\obj\Debug\MP3CorePlayer.pdb
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\MACTrackBarLib.dll
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\gTrackBar.dll
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\gTrackBar.pdb
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\gTrackBar.xml

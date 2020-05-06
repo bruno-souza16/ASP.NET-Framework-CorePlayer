@@ -24,6 +24,7 @@ namespace MP3CorePlayer
         public Form1()
         {
             InitializeComponent();
+            btn_pause.Visible = false;
         }
 
 
@@ -74,11 +75,45 @@ namespace MP3CorePlayer
         }
 
 
+        private void listView1_DoubleClick(object sender, EventArgs e)
+        {
+
+            Stop();
+
+
+            if (listView1.SelectedItems.Count > 0)
+            {
+                now = listView1.Items.IndexOf(listView1.SelectedItems[0]);
+            }
+
+            Play();
+        }
+
+        private void tbar_volume_ValueChanged(object sender, EventArgs e)
+        {
+            float vol = tbar_volume.Value * 0.1f;
+            soundOut.Volume = vol;
+            Console.WriteLine(vol);
+        }
 
 
 
 
 
+
+       
+        ISoundOut SoundOut()
+        {
+            if (WasapiOut.IsSupportedOnCurrentPlatform)
+                return new WasapiOut();
+            else
+                return new DirectSoundOut();
+        }
+
+        IWaveSource SoundSource(string file)
+        {
+            return CodecFactory.Instance.GetCodec(file);
+        }
 
         void OpenMusic(string op)
         {
@@ -127,70 +162,91 @@ namespace MP3CorePlayer
             listView1.SelectedItems[0].Remove();
         }
 
-        ISoundOut SoundOut()
-        {
-            if (WasapiOut.IsSupportedOnCurrentPlatform)
-                return new WasapiOut();
-            else
-                return new DirectSoundOut();
-        }
-
-        IWaveSource SoundSource(string file)
-        {
-            return CodecFactory.Instance.GetCodec(file);
-        }
+        
 
         void Play()
         {
-            player_on = true;
-            soundSource = SoundSource(listView1.Items[now].SubItems[2].Text);
-            soundOut = SoundOut();
-            soundOut.Initialize(soundSource);
-            soundOut.Play();
-            soundOut.Stopped += VerifyState;
-
-            listView1.Items[now].BackColor = Color.SkyBlue;
-            listView1.Items[now].ForeColor = Color.Black;
+            if (soundOut == null || soundOut.PlaybackState == PlaybackState.Stopped)
+            {
+                soundSource = SoundSource(listView1.Items[now].SubItems[2].Text);
+                MakeLabels(listView1.Items[now].SubItems[2].Text);
+                soundOut = SoundOut();
+                soundOut.Initialize(soundSource);
+                soundOut.Play();
+                Play_Aux();
+                soundOut.Stopped += Play_Aux_2;
+            }
+            else if (soundOut.PlaybackState == PlaybackState.Paused)
+            {
+                soundOut.Resume();
+                timer_ctime.Enabled = true;
+            }
+            btn_Play.Visible = false;
+            btn_pause.Visible = true;
         }
 
-        void VerifyState(object sender, EventArgs e)
+        void Play_Aux()
+        {
+            float vol = soundOut.Volume * 10;
+            tbar_volume.Value = int.Parse(vol.ToString());
+
+            timer_ctime.Interval = 1000;
+            timer_ctime.Start();
+            timer_ctime.Enabled = true;
+
+            double t = soundSource.GetLength().TotalSeconds;
+            int i = Convert.ToInt32(t);
+            trackbar_progress.MaxValue = i;
+
+            label_title.Location = new Point(350);
+            btn_Play.Visible = false;
+            btn_pause.Visible = true;
+        }
+        
+        void Play_Aux_2(object sender, EventArgs e)
         {
             if(player_on == true)
-            {
-                if(now >= 0)
-                {
-                    listView1.Items[now].BackColor = Color.Black;
-                    listView1.Items[now].ForeColor = Color.SkyBlue;
-                }               
+            {                         
 
-                if (now >= listView1.Items.Count)
+                if (now > listView1.Items.Count)
                     now = 0;
                 else
-                    now = now+1;                
-               
+                    now = now+1;
+
                 soundOut.Stop();
-                soundOut.Dispose();
-                soundSource.Dispose();
-                soundSource.Dispose();
-                
                 Play();
-            }            
+            }
+            player_on = true;    
         }
 
         void Pause()
         {
             if (soundOut.PlaybackState == PlaybackState.Playing)
+            {
                 soundOut.Pause();
-            else
-                soundOut.Resume();
+                timer_ctime.Enabled = false;
+                btn_Play.Visible = true;
+                btn_pause.Visible = false;
+            }           
         }
 
         void Stop()
         {
-            player_on = false;
-            soundOut.Stop();
-            soundOut.Dispose();
-            soundSource.Dispose();
+            if(soundOut != null)
+            {
+                if (soundOut.PlaybackState == PlaybackState.Playing)
+                {
+                    player_on = false;
+                    soundOut.Stop();
+                    soundOut = null;
+                    timer_ctime.Stop();
+                    timer_ctime.Enabled = false;
+                    trackbar_progress.Value = 0;
+                    label_ptime.Text = "00:00:00";
+                    btn_Play.Visible = true;
+                    btn_pause.Visible = false;
+                }
+            }                    
         }
 
         void Next()
@@ -202,10 +258,46 @@ namespace MP3CorePlayer
         {
             listView1.Items[now].BackColor = Color.Black;
             listView1.Items[now].ForeColor = Color.SkyBlue;
-            now = now - 2;
+            if (now <= 1)
+                now = -1;
+            else
+                now = now - 2;
             soundOut.Stop();
         }
 
-       
+        void MakeLabels(string flname)
+        {
+            var id3tag = CSCore.Tags.ID3.ID3v2.FromFile(flname.ToString());
+            IWaveSource iw = CodecFactory.Instance.GetCodec(flname.ToString());
+            label_title.Text = id3tag.QuickInfo.Title;
+            label_artist.Text = id3tag.QuickInfo.LeadPerformers;
+            label_album.Text = id3tag.QuickInfo.Album;
+            label_title.Text = id3tag.QuickInfo.Title;
+            label_year.Text = id3tag.QuickInfo.Year.ToString();
+            label_genre.Text = id3tag.QuickInfo.Genre.ToString();
+        }
+
+        private void timer_ctime_Tick(object sender, EventArgs e)
+        {
+            label_ptime.Text = soundOut.WaveSource.GetPosition().Hours.ToString("00") + ":" +
+                                soundOut.WaveSource.GetPosition().Minutes.ToString("00") + ":" +
+                                 soundOut.WaveSource.GetPosition().Seconds.ToString("00");
+            trackbar_progress.Value += 1;
+            if(label_title.Location != new Point(-350))
+            {
+                int pos = label_title.Location.X;
+                pos = pos - 10;
+                label_title.Location = new Point(pos);
+            }else if(label_title.Location == new Point(-350))
+            {
+                int pos = 350;
+                label_title.Location = new Point(pos);
+            }
+        }
+
+        private void trackbar_progress_ValueChanged(object sender, EventArgs e)
+        {
+            soundSource.SetPosition(TimeSpan.FromSeconds(trackbar_progress.Value));
+        }
     }
 }
