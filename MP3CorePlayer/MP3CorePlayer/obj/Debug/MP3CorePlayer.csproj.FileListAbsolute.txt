@@ -15,3 +15,10 @@ C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP
 C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\gTrackBar.dll
 C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\gTrackBar.pdb
 C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\gTrackBar.xml
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\resources\img\bg1.jpg
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\presets\Rock.eq
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\presets\Treble.eq
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\presets\Bass.eq
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\presets\Jazz.eq
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\presets\Pop.eq
+C:\Users\Bruno\Documents\Projects\GitHub\ASP.NET\ASP.NET-Framework-CorePlayer\MP3CorePlayer\MP3CorePlayer\bin\Debug\presets\Powerful.eq
